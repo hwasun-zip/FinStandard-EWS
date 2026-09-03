@@ -1,6 +1,6 @@
 # FinStandard-EWS (Early Warning Scoring)
 
-DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실위험 조기경보 파이프라인 (개인 프로젝트, 2026.09 ~)
+DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실위험 조기경보 파이프라인 (개인 프로젝트, 2026.08 ~ 2026.09)
 
 **사용기술**: Python(pandas, scikit-learn), DART Open API(OpenDartReader), 공공데이터(KSIC 한국표준산업분류), Google Colab
 
@@ -22,6 +22,8 @@ DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실�
 - 같은 영업수익이라는 이름이 기업에 따라 서로 다른 두 개념(매출액 대 매출총이익)을 가리키는 오분류 사례를 발견하고, 코드 기준 검증을 통해 이를 배제
 - 조이시티처럼 매출원가 항목이 없는 업종 특성상 매출총이익 코드로 매출액을 대체 표기하는 경우를 fallback 규칙으로 별도 처리
 - 완전자본잠식 기업(자본총계가 마이너스) 23개를 발견하고, 부채비율 계산 시 부호가 왜곡되는 문제를 별도 임계치 규칙으로 해결
+
+![계정과목 표준화 매핑 구조](./account_standardization_mapping.png)
 
 ## 3단계: 산업위험 반영 스코어링
 
@@ -45,6 +47,8 @@ DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실�
 - 상위 10퍼센트 기업의 실제 부실률은 하위 80퍼센트 대비 15배에서 19배 높음
 - 상위 10퍼센트 기업만 집중 모니터링해도 전체 부실 사례의 52.3퍼센트를 조기에 포착 가능
 
+![위험 스코어 등급별 및 분위별 실제 부실률](./risk_score_validation.png)
+
 ## 5단계: 업무 프로세스 개선안
 
 수작업 기반의 사후 대응 방식(AS-IS)에서, 자동화된 파이프라인을 통한 사전 조기경보 방식(TO-BE)으로 전환하는 프로세스 개선안과 조기경보 리포트 양식을 설계했습니다. 자세한 내용은 [05_process_and_report_design.md](./05_process_and_report_design.md)에서 확인할 수 있습니다.
@@ -57,12 +61,10 @@ DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실�
 
 ```
 FinStandard-EWS/
-├── notebooks/              콜랩 탐색 및 파이프라인 노트북
-├── docs/
-│   └── 05_process_and_report_design.md
-├── outputs/
-│   ├── risk_score_validation.png
-│   └── account_standardization_mapping.png
+├── FinStandard_EWS.ipynb
+├── 05_process_and_report_design.md
+├── risk_score_validation.png
+├── account_standardization_mapping.png
 └── README.md
 ```
 
