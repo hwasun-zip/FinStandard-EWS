@@ -1,6 +1,6 @@
 # FinStandard-EWS (Early Warning Scoring)
 
-DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실위험 조기경보 파이프라인 (개인 프로젝트, 2026.08 ~ 2026.09)
+DART 기업정보 표준화 및 품질관리, 산업 상대지표 기반 부실위험 조기경보 파이프라인 (개인 프로젝트, 2026.01 ~ 2026.02)
 
 **사용기술**: Python(pandas, scikit-learn), DART Open API(OpenDartReader), 공공데이터(KSIC 한국표준산업분류), Google Colab
 
